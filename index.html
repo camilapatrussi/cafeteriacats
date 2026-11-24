@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fantasy Cats Café</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="background-stars"></div>
+
+    <header class="header">
+        <a href="#" class="brand" data-page="home">
+            <span class="brand-icon">🐈‍⬛</span>
+
+            <div>
+                <h1>Fantasy Cats</h1>
+                <small>CAFÉ MÁGICO • DESDE SEMPRE</small>
+            </div>
+        </a>
+
+        <nav class="navigation">
+            <a href="#" data-page="home">Início</a>
+            <a href="#" data-page="menu">Cardápio</a>
+            <a href="#" data-page="quiz">Quiz mágico</a>
+            <a href="#" data-page="eco">Eco Magic</a>
+            <a href="#" data-page="club">Clube</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="icon-button" data-page="cart" title="Carrinho">
+                🛒 <span id="cart-count">0</span>
+            </button>
+
+            <button class="icon-button" data-page="account" title="Minha conta">
+                ♡
+            </button>
+        </div>
+    </header>
+
+    <main id="app">
+
+        <!-- INÍCIO -->
+        <section class="page active" id="home">
+
+            <div class="hero">
+                <div class="hero-content">
+
+                    <span class="eyebrow">✦ UM UNIVERSO DE SABORES ✦</span>
+
+                    <h2>Onde a magia encontra o seu <span>café.</span></h2>
+
+                    <p>
+                        Entre em um mundo encantado de bebidas especiais,
+                        doces mágicos e gatinhos cheios de personalidade.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button class="primary-button" data-page="menu">
+                            Explorar cardápio ✧
+                        </button>
+
+                        <button class="secondary-button" data-page="quiz">
+                            Descobrir minha poção ♡
+                        </button>
+                    </div>
+
+                    <div class="hero-details">
+                        <span>☾ Feito com carinho</span>
+                        <span>✦ Ingredientes especiais</span>
+                        <span>♡ Experiência mágica</span>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900"
+                        alt="Bolo especial de confeitaria"
+                    >
+
+                    <div class="floating-card">
+                        <span>🐾</span>
+                        <div>
+                            <strong>Um toque de magia</strong>
+                            <small>Seu momento encantado começa aqui</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="eyebrow">✦ ESCOLHIDOS PELOS GATINHOS ✦</span>
+                    <h2>Favoritos do reino</h2>
+                    <p>Conheça algumas das nossas delícias mais encantadoras.</p>
+                </div>
+
+                <div class="product-grid" id="featured-products"></div>
+
+                <div class="center">
+                    <button class="secondary-button" data-page="menu">
+                        Ver cardápio completo →
+                    </button>
+                </div>
+            </section>
+
+            <section class="magic-banner">
+                <div>
+                    <span class="eyebrow">☾ SEU DESTINO ESTÁ ESCRITO NAS ESTRELAS</span>
+                    <h2>Qual é a sua magia de hoje?</h2>
+                    <p>Faça nosso quiz e descubra uma bebida que combina com você.</p>
+                    <button class="primary-button" data-page="quiz">
+                        Fazer quiz mágico ✨
+                    </button>
+                </div>
+
+                <span class="banner-cat">🐈‍⬛</span>
+            </section>
+
+        </section>
+
+        <!-- CARDÁPIO -->
+        <section class="page" id="menu">
+
+            <div class="page-heading">
+                <span class="eyebrow">✦ O LIVRO DE RECEITAS ✦</span>
+                <h2>Cardápio mágico</h2>
+                <p>Escolha sua próxima experiência encantada.</p>
+            </div>
+
+            <div class="menu-tools">
+                <input
+                    type="search"
+                    id="search-product"
+                    placeholder="Buscar uma delícia..."
+                >
+
+                <div class="category-filters" id="category-filters">
+                    <button class="filter-button active" data-category="Todos">Todos</button>
+                    <button class="filter-button" data-category="Bebidas">Bebidas</button>
+                    <button class="filter-button" data-category="Doces">Doces</button>
+                    <button class="filter-button" data-category="Salgados">Salgados</button>
+                </div>
+            </div>
+
+            <div class="product-grid" id="menu-products"></div>
+
+        </section>
+
+        <!-- QUIZ -->
+        <section class="page" id="quiz">
+
+            <div class="page-heading">
+                <span class="eyebrow">☾ ORÁCULO DOS GATINHOS ☾</span>
+                <h2>Descubra sua poção</h2>
+                <p>Responda às perguntas e descubra qual bebida combina com sua energia.</p>
+            </div>
+
+            <div class="quiz-card">
+
+                <div id="quiz-content">
+                    <span class="quiz-icon">🔮</span>
+
+                    <h3>Como está sua energia hoje?</h3>
+
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-answer="calma">
+                            ☁️ Quero relaxar
+                        </button>
+
+                        <button class="quiz-option" data-answer="energia">
+                            ⚡ Preciso de energia
+                        </button>
+
+                        <button class="quiz-option" data-answer="doce">
+                            🍓 Quero algo doce
+                        </button>
+
+                        <button class="quiz-option" data-answer="misterio">
+                            🌙 Quero experimentar algo diferente
+                        </button>
+                    </div>
+                </div>
+
+                <div id="quiz-result" class="hidden"></div>
+
+            </div>
+
+        </section>
+
+        <!-- ECO MAGIC -->
+        <section class="page" id="eco">
+
+            <div class="page-heading">
+                <span class="eyebrow">🌱 MAGIA QUE CUIDA DO PLANETA</span>
+                <h2>Eco Magic</h2>
+                <p>Pequenas atitudes também podem transformar o mundo.</p>
+            </div>
+
+            <div class="eco-card">
+                <span class="eco-icon">🌳</span>
+
+                <h3>Seja um guardião da natureza!</h3>
+
+                <p>
+                    Complete missões sustentáveis e acumule pontos
+                    para trocar por recompensas mágicas.
+                </p>
+
+                <div class="points-display">
+                    <span id="eco-points">0</span>
+                    <small>pontos mágicos</small>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <h2>Missões mágicas</h2>
+                <p>Escolha uma missão e faça sua parte.</p>
+            </div>
+
+            <div class="mission-grid" id="eco-missions"></div>
+
+        </section>
+
+        <!-- CLUBE -->
+        <section class="page" id="club">
+
+            <div class="page-heading">
+                <span class="eyebrow">♡ CLUBE DOS GATINHOS ♡</span>
+                <h2>Clube Fantasy</h2>
+                <p>Quanto mais você visita nosso café, mais recompensas recebe!</p>
+            </div>
+
+            <div class="club-card">
+                <span class="club-icon">👑</span>
+                <h3>Seu carinho vale recompensas!</h3>
+                <p>Acumule pontos em suas compras e desbloqueie benefícios.</p>
+
+                <div class="points-display">
+                    <span id="club-points">0</span>
+                    <small>pontos disponíveis</small>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <h2>Recompensas</h2>
+            </div>
+
+            <div class="reward-grid" id="rewards-list"></div>
+
+        </section>
+
+        <!-- CARRINHO -->
+        <section class="page" id="cart">
+
+            <div class="page-heading">
+                <span class="eyebrow">✦ SUA SACOLINHA ENCANTADA ✦</span>
+                <h2>Meu carrinho</h2>
+                <p>Confira suas escolhas antes de finalizar.</p>
+            </div>
+
+            <div class="cart-layout">
+
+                <div class="cart-items" id="cart-items"></div>
+
+                <div class="cart-summary">
+                    <h3>Resumo do pedido</h3>
+
+                    <div class="summary-line">
+                        <span>Subtotal</span>
+                        <strong id="cart-subtotal">R$ 0,00</strong>
+                    </div>
+
+                    <div class="summary-line">
+                        <span>Entrega</span>
+                        <strong>R$ 0,00</strong>
+                    </div>
+
+                    <div class="summary-line total">
+                        <span>Total</span>
+                        <strong id="cart-total">R$ 0,00</strong>
+                    </div>
+
+                    <button class="primary-button full-button" id="checkout-button">
+                        Finalizar pedido ♡
+                    </button>
+
+                    <small>☾ Pagamento demonstrativo nesta versão.</small>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTA -->
+        <section class="page" id="account">
+
+            <div class="page-heading">
+                <span class="eyebrow">♡ SEU CANTINHO MÁGICO ♡</span>
+                <h2>Minha conta</h2>
+                <p>Entre ou crie sua conta no Fantasy Cats.</p>
+            </div>
+
+            <div class="account-card">
+
+                <div id="auth-area">
+
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" data-auth="login">Entrar</button>
+                        <button class="auth-tab" data-auth="register">Cadastrar</button>
+                    </div>
+
+                    <form id="login-form">
+
+                        <label for="login-email">E-mail</label>
+                        <input type="email" id="login-email" required placeholder="seu@email.com">
+
+                        <label for="login-password">Senha</label>
+                        <input type="password" id="login-password" required placeholder="Sua senha">
+
+                        <button class="primary-button full-button" type="submit">
+                            Entrar ♡
+                        </button>
+
+                    </form>
+
+                    <form id="register-form" class="hidden">
+
+                        <label for="register-name">Nome</label>
+                        <input type="text" id="register-name" required placeholder="Seu nome">
+
+                        <label for="register-email">E-mail</label>
+                        <input type="email" id="register-email" required placeholder="seu@email.com">
+
+                        <label for="register-password">Senha</label>
+                        <input type="password" id="register-password" required minlength="6" placeholder="Mínimo de 6 caracteres">
+
+                        <button class="primary-button full-button" type="submit">
+                            Criar conta ✨
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <div id="profile-area" class="hidden"></div>
+
+            </div>
+
+        </section>
+
+        <!-- PEDIDOS -->
+        <section class="page" id="orders">
+
+            <div class="page-heading">
+                <span class="eyebrow">✦ SUA JORNADA ✦</span>
+                <h2>Meus pedidos</h2>
+                <p>Acompanhe suas encomendas mágicas.</p>
+            </div>
+
+            <div id="orders-list"></div>
+
+        </section>
+
+        <!-- AVALIAÇÕES -->
+        <section class="page" id="reviews">
+
+            <div class="page-heading">
+                <span class="eyebrow">♡ SUA OPINIÃO É MÁGICA ♡</span>
+                <h2>Avaliações</h2>
+                <p>Conte como foi sua experiência no Fantasy Cats.</p>
+            </div>
+
+            <div class="account-card">
+
+                <form id="review-form">
+
+                    <label for="review-name">Seu nome</label>
+                    <input type="text" id="review-name" required>
+
+                    <label for="review-rating">Sua avaliação</label>
+                    <select id="review-rating">
+                        <option value="5">★★★★★ - Amei!</option>
+                        <option value="4">★★★★ - Muito bom!</option>
+                        <option value="3">★★★ - Bom</option>
+                        <option value="2">★★ - Pode melhorar</option>
+                        <option value="1">★ - Não gostei</option>
+                    </select>
+
+                    <label for="review-message">Comentário</label>
+                    <textarea id="review-message" required placeholder="Conte sua experiência..."></textarea>
+
+                    <button type="submit" class="primary-button full-button">
+                        Enviar avaliação ♡
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div id="reviews-list" class="review-grid"></div>
+
+        </section>
+
+        <!-- POÇÃO SURPRESA -->
+        <section class="page" id="mystery">
+
+            <div class="page-heading">
+                <span class="eyebrow">🌙 SEGREDOS DO REINO</span>
+                <h2>Poção misteriosa</h2>
+                <p>Você está preparada para descobrir uma surpresa?</p>
+            </div>
+
+            <div class="mystery-card">
+
+                <div class="potion-animation">🧪</div>
+
+                <h3>O que será que está no caldeirão?</h3>
+
+                <p>Prepare-se para uma surpresa deliciosa!</p>
+
+                <button class="primary-button" id="mystery-button">
+                    Revelar minha poção ✨
+                </button>
+
+                <div id="mystery-result"></div>
+
+            </div>
+
+        </section>
+
+        <!-- ADMINISTRAÇÃO -->
+        <section class="page" id="admin">
+
+            <div class="page-heading">
+                <span class="eyebrow">✦ PAINEL DO REINO ✦</span>
+                <h2>Administração</h2>
+                <p>Área demonstrativa de gerenciamento do Fantasy Cats.</p>
+            </div>
+
+            <div class="admin-grid">
+
+                <div class="admin-stat">
+                    <span>🛍️</span>
+                    <strong id="admin-orders">0</strong>
+                    <small>Pedidos</small>
+                </div>
+
+                <div class="admin-stat">
+                    <span>👥</span>
+                    <strong id="admin-users">0</strong>
+                    <small>Clientes cadastrados</small>
+                </div>
+
+                <div class="admin-stat">
+                    <span>⭐</span>
+                    <strong id="admin-reviews">0</strong>
+                    <small>Avaliações</small>
+                </div>
+
+            </div>
+
+            <div class="admin-content">
+                <h3>Pedidos recentes</h3>
+                <div id="admin-orders-list"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL DE PERSONALIZAÇÃO -->
+    <div class="modal hidden" id="product-modal">
+
+        <div class="modal-content">
+
+            <button class="modal-close" id="close-modal">×</button>
+
+            <div id="modal-product-content"></div>
+
+        </div>
+
+    </div>
+
+    <!-- NOTIFICAÇÕES -->
+    <div id="toast-container"></div>
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+            🐈‍⬛ Fantasy Cats Café
+        </div>
+
+        <p>Um universo de sabores, magia e fofura.</p>
+
+        <div class="footer-links">
+            <a href="#" data-page="home">Início</a>
+            <a href="#" data-page="menu">Cardápio</a>
+            <a href="#" data-page="reviews">Avaliações</a>
+            <a href="#" data-page="admin">Administração</a>
+        </div>
+
+        <small>♡ FANTASY CATS • TODOS OS DIREITOS RESERVADOS ♡</small>
+
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
